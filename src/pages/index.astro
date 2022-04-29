@@ -1,0 +1,55 @@
+---
+import Counter from '../components/Counter';
+import '../styles/global.css';
+import '../styles/home.css';
+
+
+// Component Script:
+// You can write any JavaScript/TypeScript that you'd like here.
+// It will run during the build, but never in the browser.
+// All variables are available to use in the HTML template below.
+let title = 'Astro + Solid Magic';
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>{title}</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+</head>
+<body>
+	<main>
+		<header>
+        <p> Astro + Solid </p>
+		</header>
+
+
+		<!--
+
+		You can also use imported framework components directly in your markup!
+		
+		Note: by default, these components are NOT interactive on the client.
+		The `client:visible` directive tells Astro to make it interactive.
+		
+		See https://docs.astro.build/core-concepts/component-hydration/ 
+
+		-->
+
+<div class="mt-2 flex flex-row gap-4">
+<div>
+    <p> Interactive component: </p>
+    <Counter client:load />
+    </div>
+    <div>
+    <p> Non Interactive component: </p>
+    <Counter />
+    </div>
+    </div>
+	</main>
+</body>
+</html>
